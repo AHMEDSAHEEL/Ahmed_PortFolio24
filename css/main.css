@@ -423,6 +423,125 @@ a.back-to-top:hover, a.back-to-top:focus{
 	margin-bottom: 2rem;
 	margin-top: -0.7rem;
 }
+.main-container{
+	
+	padding-top: 5%;
+	
+}
+.menu{
+    position:relative;
+   width:280px;
+   margin:  auto;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+  }
+  .menu .toggle{
+    position:relative;
+    height:40px;
+    width:40px;
+    background:#fff;
+    border-radius:50%;
+    box-shadow:0 3px 4px rgba(0,0,0,0.15);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#333;
+    font-size:2rem;
+    cursor:pointer;
+    transition:1.2s;
+    z-index:1;
+  }
+  .menu.active .toggle{
+    transform:rotate(360deg);
+    box-shadow: 0 6px 8px rgba(0,0,0,0.15),
+      0 0 0 2px #333,
+      0 0 0 8px #fff;
+  }
+  .menu.active{
+     height: 270px;
+  }
+  .menu li{
+    position:absolute;
+    left:0;
+    list-style:none;
+    transition:0.5s;
+    transform:rotate(calc(360deg/8 * var(--i)));
+    transform-origin:135px;
+    scale:0;
+    transition-delay: calc(0.05s * var(--i));
+  }
+  .menu.active li{
+    scale:1;
+  }
+  .menu li a{
+    position:relative;
+    display:flex;
+   transform:rotate(calc(360deg/-8 * var(--i)));
+    width:50px;
+    height:50px;
+    background-color:#FFF;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    font-size:1.75rem;
+    color:var(--clr);
+     box-shadow:0 3px 4px rgba(0,0,0,0.15);
+    transition:0.5s;
+  }
+  .menu li:hover a{
+    font-size:2.5rem;
+    box-shadow:0 0 0 2px var(--clr),
+      0 0 0 6px #fff;
+  }
+.toggle:hover{
+    background-color:rgb(27, 221, 221);
+    scale: 1.1;
+  
+    animation-duration: 0.5s;
+}
+
+.grid-left{
+    order: 1;
+    text-align: center;
+    
+    margin: 28% auto;
+    animation: left 1.3s ease-in-out;
+   
+}
+@keyframes left {
+    0%{
+        
+        transform: translateX(-100%);
+    }
+}
+ .main-container h1,p{
+    margin-top: 1rem;
+    color: white;
+    justify-content: center;
+    letter-spacing: 0.5px;    
+}
+
+
+.grid-right{
+    margin: 3%;
+    order: 2;;
+    animation: right 1.3s ease-in-out;
+}
+@keyframes right {
+    0%{
+        
+        transform: translateX(100%);
+    }
+}
+.ahmed-back{
+    width: 100%;
+   
+    border-radius:10%;   
+}
+
 /* ==========================================================================
 02. Start Header Area
 ========================================================================== */
